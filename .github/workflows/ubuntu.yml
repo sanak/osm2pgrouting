@@ -79,8 +79,17 @@ jobs:
           cd build
           cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }} ..
 
+          # Build osmium tool
+          cd ../tools/osmium
+          cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }} ..
+
       - name: Build
         run: |
           cd build
+          make -j 4
+          sudo make install
+
+          # Build osmium tool
+          cd ../tools/osmium
           make -j 4
           sudo make install
