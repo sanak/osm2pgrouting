@@ -30,7 +30,7 @@ jobs:
           compiler: [ gcc-latest, g++-11, clang ]
           include:
             - os: ubuntu-latest
-              pqxx: '7.10'
+              pqxx: '7.8' # 7.8t64
             - os: ubuntu-22.04
               pqxx: '6.4'
 
