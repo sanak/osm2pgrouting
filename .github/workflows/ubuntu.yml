@@ -96,7 +96,7 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }} ..
 
           # Build osmium tool
-          cd ../tools/osmium
+          cd ../../tools/osmium
           mkdir build
           cd build
           cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }} ..
@@ -113,6 +113,6 @@ jobs:
           sudo make install
 
           # Build osmium tool
-          cd ../tools/osmium/build
+          cd ../../tools/osmium/build
           make -j 4
           sudo make install
