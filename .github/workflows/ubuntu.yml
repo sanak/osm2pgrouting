@@ -89,6 +89,12 @@ jobs:
           cd build
           cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }} ..
 
+          # Build getgraph
+          cd ../getgraph
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }} ..
+
           # Build osmium tool
           cd ../tools/osmium
           mkdir build
@@ -98,6 +104,11 @@ jobs:
       - name: Build
         run: |
           cd build
+          make -j 4
+          sudo make install
+
+          # Build getgraph
+          cd ../getgraph/build
           make -j 4
           sudo make install
 
